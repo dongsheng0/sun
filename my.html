@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+*{margin:0; padding:0;}
+span{width:300px; height:30px; font-size:20px; line-height:30px;position:absolute; top:50%; left:50%; margin-top:-15px; margin-left:-150px; text-shadow:0 0 0 black;}
+</style>
+<script>
+window.onload=function(){
+	var oS1=document.getElementById('s1');
+	document.onmousemove=function(ev){
+		var x1=ev.pageX;
+		var y1=ev.pageY;
+		var x2=oS1.offsetLeft+oS1.offsetWidth/2;
+		var y2=oS1.offsetTop+oS1.offsetHeight/2;
+		var disX=(x2-x1)/3;
+		var disY=(y2-y1)/3;
+		var dis=Math.sqrt(disX*disX+disY*disY)/20;
+		oS1.style.textShadow=disX+'px '+disY+'px '+dis+'px black';
+	};
+};
+</script>
+</head>
+
+<body>
+<span id="s1">http://www.zhinengshe.com</span>
+</body>
+</html>
